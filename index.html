@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Caliva</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+</head>
+<body class="no-scroll">
+    <header>
+        <div class="nav-left">
+            <a href="#">Shop</a>
+        </div>
+        <div class="nav-center">
+            <select class="dropdown" id="deliveryOptions">
+                <option value="delivery">Delivery</option>
+                <option value="pickup">Pick Up</option>
+            </select>
+        </div>
+        <div class="nav-right">
+            <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="Shopping Bag" onclick="alert('Shopping bag clicked!')">
+            <img src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png" alt="User">
+        </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="order-section">
+          <h2>ORDER ONLINE AND ENJOY CALIFORNIA WEED DELIVERY</h2>
+          <p>Throughout Northern, Central and Southern California</p>
+          <button class='round-button'>Shop Now</button>
+        </section>
+
+        <section class="deliver-section">
+            <h2>WHERE WE DELIVER IN CALIFORNIA</h2>
+        </section>
+    </div>
+    </main>
+
+    <footer>
+        <p>&copy;Caliva 2024</p>
+    </footer>
+
+    <div class="popup" id="agePopup">
+        <div class="popup-content">
+            <h2>Age Verification</h2>
+            <p>Are you over 21 years old?</p>
+            <button onclick="confirmAge(true)">Yes</button>
+            <button onclick="confirmAge(false)">No</button>
+        </div>
+    </div>
+
+    <script>
+        function confirmAge(isOver21) {
+            const popup = document.getElementById("agePopup");
+            const body = document.body;
+
+            if (isOver21) {
+                popup.style.display = "none"; // Close the popup
+                body.classList.remove("no-scroll"); // Restore scrolling
+            } else {
+                alert("Sorry, you must be at least 21 to enter.");
+                window.location.href = "https://www.google.com"; // Redirect to another page
+            }
+        }
+    </script>
+</body>
